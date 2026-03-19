@@ -68,5 +68,3 @@ cd webui && python app.py
 致谢
  
 感谢开源社区提供的 transformers、peft、llama.cpp 等工具链与项目参考
-
-怎么样
