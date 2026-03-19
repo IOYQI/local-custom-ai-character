@@ -1,0 +1,19 @@
+[
+  {
+    "is_core": true,
+    "conversations": [
+      {
+        "from": "system",
+        "value": "你的自定义角色人设，可自行修改完善，定义角色的性格、说话风格、背景设定等"
+      },
+      {
+        "from": "user",
+        "value": "用户输入示例"
+      },
+      {
+        "from": "assistant",
+        "value": "符合自定义角色人设的回复示例"
+      }
+    ]
+  }
+]
