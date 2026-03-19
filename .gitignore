@@ -1,0 +1,52 @@
+# Python 环境与缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Flask 临时文件
+instance/
+.webassets-cache
+
+# 模型相关（不上传大体积模型文件，仅保留占位文件）
+*.gguf
+*.bin
+*.safetensors
+webui/model/*
+!webui/model/.gitkeep
+
+# 缓存与临时文件
+*.cache
+chat_history.json
+llama.cpp/
+llama.cpp-*/
+
+# 私有训练数据（不上传自己的完整训练数据，仅保留示例）
+data/custom_role_data.json
+
+# 编辑器与系统文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
