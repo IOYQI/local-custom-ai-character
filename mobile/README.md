@@ -37,13 +37,13 @@
 
 ### 3. 部署项目与模型
 
-  克隆本仓库到 Termux 环境：
+克隆本仓库到 Termux 环境：
 ``` bash
 git clone <https://github.com/IOYQI/local-custom-ai-character>
 cd local-custom-llm-full-project
 ```
 
-  安装 Python 依赖：
+安装 Python 依赖：
 ```bash
     pip install -r requirements.txt
 ```
@@ -51,17 +51,17 @@ cd local-custom-llm-full-project
 
 ### 4. 启动服务
 
-  进入 webui 目录：
+进入 webui 目录：
 ``` bash
 cd webui
 ```
-  启动后端服务：
+启动后端服务：
 ```bash
     python app.py
 ```
-    服务启动后，在手机浏览器打开 http://localhost:8088 即可开始离线对话；同局域网设备也可通过手机的局域网 IP 访问服务。
+服务启动后，在手机浏览器打开 http://localhost:8088 即可开始离线对话；同局域网设备也可通过手机的局域网 IP 访问服务。
 
-优化参数建议
+### 5. 优化参数建议
 针对老旧手机的低配置环境，建议使用以下推理参数，保证流畅运行：
 
     温度（temperature）：0.7
