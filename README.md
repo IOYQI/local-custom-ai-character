@@ -43,40 +43,38 @@
 pip install torch==2.5.1 torchvision==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 ```
 
-### 2. 安装其他依赖
+2. 安装其他依赖
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 快速开始
+快速开始
 
-1. **模型微调**  
-   参考 `finetune/README.md` 完成两阶段 LoRA 微调与权重合并。
-
-2. **格式转换**  
-   将合并后的模型转换为 GGUF 格式，放入 `webui/model/` 目录（转换方法见 `finetune/README.md`）。
-
-3. **启动网页服务**
+1. 模型微调
+      参考 finetune/README.md 完成两阶段 LoRA 微调与权重合并。
+2. 格式转换
+      将合并后的模型转换为 GGUF 格式，放入 webui/model/ 目录（转换方法见 finetune/README.md）。
+3. 启动网页服务
    ```bash
    cd webui && python app.py
    ```
-
-4. **开始使用**
-   - 本地访问：`http://localhost:8088`
-   - 局域网访问：使用设备局域网 IP 打开对应地址
-
----
-
-## 合规声明
-
-- 本项目仅用于个人学习与非商用技术研究。
-- 使用者需自行保证训练数据、模型使用的合规性，不得侵犯第三方知识产权、肖像权等合法权益。
-- 禁止将本项目及衍生内容用于商业、违法违规及其他侵权用途。
+4. 开始使用
+   · 本地访问：http://localhost:8088
+   · 局域网访问：使用设备局域网 IP 打开对应地址
 
 ---
 
-## 致谢
+合规声明
 
-感谢开源社区提供的 `transformers`、`peft`、`llama.cpp` 等工具链与项目参考。
+· 本项目仅用于个人学习与非商用技术研究。
+· 使用者需自行保证训练数据、模型使用的合规性，不得侵犯第三方知识产权、肖像权等合法权益。
+· 禁止将本项目及衍生内容用于商业、违法违规及其他侵权用途。
+
+---
+
+致谢
+
+感谢开源社区提供的 transformers、peft、llama.cpp 等工具链与项目参考。
