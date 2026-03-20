@@ -39,7 +39,7 @@
 
   克隆本仓库到 Termux 环境：
 ``` bash
-git clone <你的GitHub仓库地址>
+git clone <https://github.com/IOYQI/local-custom-ai-character>
 cd local-custom-llm-full-project
 ```
 
