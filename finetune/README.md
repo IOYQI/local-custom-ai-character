@@ -18,3 +18,34 @@
 ### 2. 开始微调训练
 ```bash
 python finetune.py
+```
+
+脚本会自动完成数据清洗、两阶段训练，最终输出 LoRA 权重文件。
+### 3. 合并 LoRA 权重
+训练完成后，运行合并脚本，生成完整的可推理模型：
+```bash
+python merge.py
+```
+
+### 4. 命令行测试模型效果
+```bash
+python test_inference.py
+```
+
+### 5. 转换为 GGUF 格式（用于 webui / 移动端部署）
+合并后的 Hugging Face 格式模型，需转换为 GGUF 格式才能用于 llama.cpp 推理，步骤如下：
+克隆 llama.cpp 仓库
+```bash
+git clone https://github.com/ggerganov/llama.cpp
+```
+  安装转换依赖
+```bash
+pip install -r llama.cpp/requirements.txt
+```
+
+  执行转换（将路径替换为你的合并后模型路径）
+```bash
+python llama.cpp/convert_hf_to_gguf.py ./merged_model --outfile ./custom_role_model_q8_0.gguf --outtype q8_0
+```
+
+  转换完成后，将生成的 GGUF 文件放入 webui/model/ 目录，即可用于网页服务部署
