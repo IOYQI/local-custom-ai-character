@@ -33,6 +33,7 @@
     ```bash
     sh compile_llama.sh
 ```
+
     编译完成后，llama-cli 可执行文件会生成在 ~/llama/llama.cpp/build/bin/ 目录
 
 ### 3. 部署项目与模型
