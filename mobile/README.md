@@ -30,36 +30,40 @@
 一键执行编译脚本（本目录下的`compile_llama.sh`）：
 ```bash
 sh compile_llama.sh
- 
+ ```
  
 编译完成后， llama-cli  可执行文件会生成在  ~/llama/llama.cpp/build/bin/  目录。
  
-3. 部署项目与模型
+### 3. 部署项目与模型
  
 1. 克隆本仓库到 Termux 环境：
-bash  
+```bash 
 git clone <你的GitHub仓库地址>
 cd local-custom-llm-full-project
- 
+ ```
+
 2. 安装 Python 依赖：
-bash  
+```bash
 pip install -r requirements.txt
- 
+ ```
+
 3. 将电脑上转换好的 GGUF 模型文件，放入手机的  ~/llama/models/  目录。
  
-4. 启动服务
+### 4. 启动服务
  
 1. 进入 webui 目录：
-bash  
+```bash
 cd webui
- 
+ ```
+
 2. 启动后端服务：
-bash  
+```bash  
 python app.py
- 
+ ```
+
 3. 服务启动后，在手机浏览器打开  http://localhost:8088  即可开始离线对话；同局域网设备也可通过手机的局域网 IP 访问服务。
  
-5. 优化参数建议
+### 5. 优化参数建议
  
 针对老旧手机的低配置环境，建议使用以下推理参数，保证流畅运行：
  
