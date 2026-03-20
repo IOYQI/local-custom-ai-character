@@ -5,16 +5,14 @@ from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
     TrainingArguments,
-    DataCollatorForSeq2Seq
+    DataCollatorForSeq2Seq,
+    Trainer
 )
 from peft import LoraConfig, get_peft_model, TaskType
-from accelerate import Accelerator
 import torch
 import json
 
 # ====================== 环境配置（适配双核老CPU） ======================
-accelerator = Accelerator()
-device = accelerator.device
 torch.set_num_threads(2)  # 适配i3-2120 2核4线程
 torch.set_grad_enabled(True)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -198,15 +196,13 @@ def main():
             fp16=False,  # 无GPU，关闭半精度
         )
 
-        # 初始化训练器
-        trainer = accelerator.prepare(
-            training_args.get_trainer_cls(model)(
-                model=model,
-                args=training_args,
-                train_dataset=train_dataset,
-                data_collator=data_collator,
-                tokenizer=tokenizer,
-            )
+        # 初始化训练器（直接使用 Trainer，无需 accelerate）
+        trainer = Trainer(
+            model=model,
+            args=training_args,
+            train_dataset=train_dataset,
+            data_collator=data_collator,
+            tokenizer=tokenizer,
         )
         # 开始训练
         trainer.train()
