@@ -15,9 +15,57 @@
 
 ## 完整部署步骤
 ### 1. 环境准备
+
 1.  安卓手机安装 Termux 终端
 2.  打开Termux，执行以下命令更新环境并安装依赖：
     ```bash
     pkg update && pkg upgrade -y
     pkg install -y python python-pip git cmake make clang
 ```
+配置 Python 国内镜像源，提升安装速度：
+```bash
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+### 2. 编译 llama.cpp
+
+    一键执行编译脚本（本目录下的compile_llama.sh）：
+    ```bash
+    sh compile_llama.sh
+```
+    编译完成后，llama-cli 可执行文件会生成在 ~/llama/llama.cpp/build/bin/ 目录
+
+### 3. 部署项目与模型
+
+  克隆本仓库到 Termux 环境：
+   ``` bash
+git clone <你的GitHub仓库地址>
+cd local-custom-llm-full-project
+```
+
+  安装 Python 依赖：
+```bash
+    pip install -r requirements.txt
+```
+    将电脑上转换好的 GGUF 模型文件，放入手机的 ~/llama/models/ 目录
+
+### 4. 启动服务
+
+  进入 webui 目录：
+ ``` bash
+cd webui
+```
+  启动后端服务：
+```bash
+    python app.py
+```
+    服务启动后，在手机浏览器打开 http://localhost:8088 即可开始离线对话；同局域网设备也可通过手机的局域网 IP 访问服务。
+
+优化参数建议
+针对老旧手机的低配置环境，建议使用以下推理参数，保证流畅运行：
+
+    温度（temperature）：0.7
+    重复惩罚：1.1
+    最大生成长度：64
+    上下文窗口：512
+    推理线程数：1-2
