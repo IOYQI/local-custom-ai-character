@@ -63,6 +63,7 @@ pip install -r requirements.txt
    ```
 4. 开始使用
    · 本地访问：http://localhost:8088
+
    · 局域网访问：使用设备局域网 IP 打开对应地址
 
 ---
