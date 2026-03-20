@@ -36,6 +36,7 @@
 
     编译完成后，llama-cli 可执行文件会生成在 ~/llama/llama.cpp/build/bin/ 目录
 
+
 ### 3. 部署项目与模型
 
   克隆本仓库到 Termux 环境：
@@ -48,7 +49,9 @@ cd local-custom-llm-full-project
 ```bash
     pip install -r requirements.txt
 ```
+
     将电脑上转换好的 GGUF 模型文件，放入手机的 ~/llama/models/ 目录
+
 
 ### 4. 启动服务
 
